@@ -1,10 +1,11 @@
-# This workflow will build a MuleSoft project
-
 name: Build
 
 on:
-  workflow_dispatch:
-  
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -33,9 +34,6 @@ jobs:
         mv $artifactName1 $artifactName2
     - name: Upload artifact 
       uses: actions/upload-artifact@v3
-      with:
-          name: artifacts
-          path: target/*.jar
       with:
           name: artifacts
           path: target/*.jar
