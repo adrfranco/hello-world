@@ -64,6 +64,12 @@
 			<url>https://repository.mulesoft.org/releases/</url>
 			<layout>default</layout>
 		</repository>
+		<repository>
+			<id>anypoint-exchange-fidia</id>
+			<name>fidia Exchange</name>
+			<url>https://maven.anypoint.mulesoft.com/api/v3/organizations/80b1ac67-e832-4c01-876d-e8d680082086/maven</url>
+			<layout>default</layout>
+		</repository>
 	</repositories>
 
 	<pluginRepositories>
