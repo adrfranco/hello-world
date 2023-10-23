@@ -1,4 +1,4 @@
-# This workflow will build a MuleSoft project and deploy to CloudHub
+# This workflow will build a MuleSoft project
 
 name: Build
 
@@ -30,6 +30,9 @@ jobs:
 
     - name: Create .m2 folder
       run: mkdir -p ~/.m2
+
+    - name: Restore settings.xml
+      run: echo ${{ secrets.ANYPOINT_SETTINGS_XML }} > ~/.m2/settings.xml
     
     - name: Build with Maven
       run: mvn -B package --file pom.xml
