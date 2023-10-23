@@ -92,9 +92,9 @@ jobs:
         appNameCloudhub=${appName}${DEPLOY_ENVIRONMENT} 
         mvn -e -X deploy -DmuleDeploy \
          -Dmule.artifact=$artifactName \
-         -DconnectedAppClientId="$CLIENTID" \
-         -DconnectedAppClientSecret="$CLIENTSECRET" \
-         -DconnectedAppGrantType="$GRANTTYPE" \
+         -DclientId="$CLIENTID" \
+         -DclientSecret="$CLIENTSECRET" \
+         -DgrantType="$GRANTTYPE" \
          -DencryptionKey="$ENCRYPTIONKEY" \
          -DbusinessGroup="$ORGANIZATION" \
          -Denvironment="$appEnvironment" \
