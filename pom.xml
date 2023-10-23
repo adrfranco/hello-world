@@ -31,6 +31,27 @@
 				<extensions>true</extensions>
 				<configuration>
 					<classifier>mule-application</classifier>
+					<cloudHubDeployment>
+						<uri>https://anypoint.mulesoft.com</uri>
+						<muleVersion>4.4.0</muleVersion>
+						<username>${AnypointUsername}</username>
+						<password>${AnypointPassword}</password>
+						<applicationName>${applicationName}</applicationName>
+						<businessGroup>${businessGroup}</businessGroup>
+						<environment>${environment}</environment>
+						<workers>${workers}</workers>
+						<workerType>${workerType}</workerType>
+						<deploymentTimeout>30000</deploymentTimeout>
+						<objectStoreV2>true</objectStoreV2>
+						<persistentQueues>false</persistentQueues>
+						<region>${region}</region>
+						<skipDeploymentVerification>true</skipDeploymentVerification>
+						<applyLatestRuntimePatch>true</applyLatestRuntimePatch>
+						<properties>
+							<encryptionKey>${encryptionKey}</encryptionKey>
+							<env>${env}</env>
+						</properties>
+					</cloudHubDeployment>
 				</configuration>
 			</plugin>
 		</plugins>
