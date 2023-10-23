@@ -91,8 +91,8 @@ jobs:
         appNameCloudhub=${appName}${stconcate}${DEPLOY_ENVIRONMENT} 
         mvn -e -X deploy -DmuleDeploy \
          -Dmule.artifact=$artifactName \
-         -Danypoint.username="$USERNAME" \
-         -Danypoint.password="$PASSWORD" \
+         -DAnypointUsername="$USERNAME" \
+         -DAnypointPassword="$PASSWORD" \
          -DencryptionKey="$ENCRYPTIONKEY" \
          -DbusinessGroup="$ORGANIZATION" \
          -Denvironment="$appEnvironment" \
