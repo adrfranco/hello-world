@@ -87,10 +87,7 @@ jobs:
       
       run: |
         artifactName=$(ls *.jar | head -1)
-        appName=$(ls *.jar | head -1 |  cut -d "-" -f 1,2,3)
-        appName="${appName%%-}"
-        appName="${appName#internal-}"
-        appName="${appName:0:42}"
+        appName=$(ls *.jar | head -1 | cut -d "-" -f 1,2,3 | sed -e 's/^-\(.*\)-$/\1/' -e 's/^internal-//; s/-$//' | cut -c 1-42)
         appNameCloudhub=${appName}${stconcate}${DEPLOY_ENVIRONMENT} 
         mvn -e -X deploy -DmuleDeploy \
          -Dmule.artifact=$artifactName \
