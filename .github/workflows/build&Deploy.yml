@@ -71,8 +71,9 @@ jobs:
     
     - name: Deploy to Development
       env:
-        USERNAME: ${{ secrets.ANYPOINT_PLATFORM_USERNAME }}
-        PASSWORD: ${{ secrets.ANYPOINT_PLATFORM_PASSWORD }}
+        CLIENTID: ${{ secrets.ANYPOINT_PLATFORM_USERNAME }}
+        CLIENTSECRET: ${{ secrets.ANYPOINT_PLATFORM_PASSWORD }}
+        GRANTTYPE: "client_credentials"
         ENCRYPTIONKEY: ${{ secrets.ANYPOINT_ENCRYPTIONKEY_DEV }}
         CLIENT_ID_ENVIRONMENT: ${{ secrets.ANYPOINT_CRMDEV_CLIENTID }}
         CLIENT_SECRET_ENVIRONMENT: ${{ secrets.ANYPOINT_CRMDEV_CLIENTSECRET }}
@@ -91,8 +92,9 @@ jobs:
         appNameCloudhub=${appName}${DEPLOY_ENVIRONMENT} 
         mvn -e -X deploy -DmuleDeploy \
          -Dmule.artifact=$artifactName \
-         -DAnypointUsername="$USERNAME" \
-         -DAnypointPassword="$PASSWORD" \
+         -DconnectedAppClientId="$CLIENTID" \
+         -DconnectedAppClientSecret="$CLIENTSECRET" \
+         -DconnectedAppGrantType="$GRANTTYPE" \
          -DencryptionKey="$ENCRYPTIONKEY" \
          -DbusinessGroup="$ORGANIZATION" \
          -Denvironment="$appEnvironment" \
