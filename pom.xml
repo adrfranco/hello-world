@@ -34,8 +34,9 @@
 					<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
 						<muleVersion>4.4.0</muleVersion>
-						<username>${AnypointUsername}</username>
-						<password>${AnypointPassword}</password>
+						<connectedAppClientId>${clientId}</connectedAppClientId>
+						<connectedAppClientSecret>${clientSecret}</connectedAppClientSecret>
+						<connectedAppGrantType>${grantType}</connectedAppGrantType>
 						<applicationName>${applicationName}</applicationName>
 						<businessGroup>${businessGroup}</businessGroup>
 						<environment>${environment}</environment>
